@@ -2,10 +2,13 @@ import streamlit as st
 import joblib
 import string
 from nltk.corpus import stopwords
+
 import nltk
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+
 nltk.download('punkt')
 nltk.download('stopwords')
-from nltk.stem.porter import PorterStemmer
 
 ps = PorterStemmer()
 
