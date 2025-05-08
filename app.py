@@ -10,8 +10,8 @@ from nltk.tokenize import word_tokenize
 
 nltk.data.path.append('./nltk_data')
 
-nltk.download('punkt')
-nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('stopwords')
 
 ps = PorterStemmer()
 
