@@ -31,6 +31,8 @@ nltk.data.path.append(nltk_data_dir)
 nltk.download("punkt", download_dir=nltk_data_dir)
 nltk.download("stopwords", download_dir=nltk_data_dir)
 
+nltk.data.path.append('/opt/render/nltk_data')
+
 
 def transform_text(text):
     text = text.lower()
