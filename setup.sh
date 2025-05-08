@@ -1,13 +1,15 @@
 #!/bin/bash
 
-# Install NLTK
-pip install nltk
+# Ensure pip is up to date
+pip install --upgrade pip
 
-# Create directory for NLTK data
+# Install all dependencies
+pip install -r requirements.txt
+
+# Create NLTK data directory
 mkdir -p /opt/render/nltk_data
 
-# Download all necessary NLTK resources into the right path
+# Download necessary resources
 python -m nltk.downloader -d /opt/render/nltk_data punkt stopwords
 
-# Optionally print to check it's done
-echo "✅ NLTK data downloaded to /opt/render/nltk_data"
+echo "✅ NLTK resources downloaded"
