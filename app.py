@@ -1,11 +1,14 @@
 import streamlit as st
 import joblib
 import string
+import os
 from nltk.corpus import stopwords
+import nltk
+from nltk.stem.porter import PorterStemmer
 
+ps = PorterStemmer()
 import nltk
 from nltk.corpus import stopwords
-from nltk.stem.porter import PorterStemmer
 from nltk.tokenize import word_tokenize
 
 nltk.data.path.append('./nltk_data')
@@ -13,7 +16,21 @@ nltk.data.path.append('./nltk_data')
 # nltk.download('punkt')
 # nltk.download('stopwords')
 
-ps = PorterStemmer()
+# ps = PorterStemmer()
+
+# ===============================
+# 🛠 Setup for NLTK on Streamlit
+# ===============================
+nltk_data_dir = os.path.join(os.path.dirname(__file__), "nltk_data")
+
+if not os.path.exists(nltk_data_dir):
+    os.makedirs(nltk_data_dir)
+
+nltk.data.path.append(nltk_data_dir)
+
+nltk.download("punkt", download_dir=nltk_data_dir)
+nltk.download("stopwords", download_dir=nltk_data_dir)
+
 
 def transform_text(text):
     text = text.lower()
